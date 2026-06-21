@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(33, 190, 33);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    justify-content: space-between;
+}
+nav .logo {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+nav .shopingCart {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    gap: 8px;
+    border-style: solid;
+    border-width: 0 0 0 3px;
+    border-color: white;
+    border-radius:  0 4px 4px 0;
+    padding: 12px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(11, 106, 11);
+    }
+}
+nav .shopingCart .icon{
+    font-size: 28px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+.productsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: fit-content;
+}
+.el {
+    height: fit-content;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.el .imgBox {
+    aspect-ratio: 1 / 1;
+}
+.el .imgBox img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: fill;
+}
+.el .price {
+    text-align: right;
+}
+.el .addToCart {
+    border: 2px solid rgb(33, 190, 33);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(33, 190, 33);
+    color: white;
+    &:hover {
+        background-color: transparent;
+        color: rgb(33, 190, 33);
+    }
+}
+.cart {
+    width: 420px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    z-index: 98;
+    /* background-color: rgba(33, 190, 33, 0.1); */
+    padding: 10px;
+    border-radius: 5px;
+    /* backdrop-filter: blur(20px); */
+    border-color: white;
+    backdrop-filter: blur(40px); 
+    display: none;
+}
+.cart .cartHeading {
+    padding: 10px;
+    color: white;
+    height: 40px;
+    background-color: rgb(33, 190, 33);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cart .cartHeading span {
+    font-size: 24px;
+    cursor: pointer;
+    &:hover {
+        scale: 1.2;
+    }
+}
+.cart .list {
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: auto;
+    max-height: 50vh;
+    gap: 5px;
+}
+.cart .list li {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.prodLeft {
+    display: flex;
+    justify-content: left;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
+}
+.prod .info {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+.prod .info span {
+    text-align: right;
+}
+.cart .list li img{
+    height: 100%;
+   aspect-ratio: 1 / 1;
+    border-radius: 5px;
+   object-fit: fill;
+}
+.cart .list li .qBox{
+    display: flex;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.cart .list li .qBox input{
+    /* height: 32px;
+    width: 42px; */
+    padding: 5px;
+    font-size: 18px;
+    max-width: 54px;
+    border-radius: 5px;
+    border: 2px solid rgb(33, 190, 33)
+}
+.cart .list li .qBox .icon{
+    font-size: 36px;
+    cursor: pointer;
+    &:hover {
+        scale: 1.1;
+    }
+}
+#buy {
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+    background-color: rgb(33, 190, 33);
+    border: 2px solid rgb(33, 190, 33);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    &:hover {
+        background-color: white;
+        color: rgb(33, 190, 33);
+    }
+}
